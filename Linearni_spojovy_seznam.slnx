@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="Linearni_spojovy_seznam/Linearni_spojovy_seznam.vcxproj" Id="30865c60-9a66-48bd-b432-e4d6c4cbe6ff" />
+</Solution>
