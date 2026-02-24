@@ -17,7 +17,6 @@ int main() {
 
 	seznam.zrusNaZacatku();
 	seznam.vypis();
-
 	seznam.zrusVse();
 	std::cout << std::endl;
 }
