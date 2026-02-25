@@ -12,12 +12,15 @@ int main() {
 	seznam.vypis();
 	seznam.vypisS();
 	seznam.vypisL();
-	std::cout<< "Soucet:" << seznam.soucet() << std::endl;
-	std::cout << "Prumer:" << seznam.prumer() << std::endl;
+	std::cout<< "Soucet: " << seznam.soucet() << std::endl;
+	std::cout << "Pocet: " << seznam.pocet() << std::endl;
+	std::cout << "Prumer: " << seznam.prumer() << std::endl;
+
+	seznam.pridejDva(0);
+	seznam.vypis();
 
 	seznam.zrusNaZacatku();
 	seznam.vypis();
-
 	seznam.zrusVse();
 	std::cout << std::endl;
 }

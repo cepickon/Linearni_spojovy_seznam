@@ -11,6 +11,13 @@ void Lss::pridejNazacatek(int data) {
 	novyPrvek->mDalsi = mPrvni;
 	mPrvni = novyPrvek;
 }
+void Lss::pridejDva(int data) {
+	std::cout<< "Prida prvek druhe msto v seznamu ";
+    LssPrvek* novyPrvek = new LssPrvek();
+    novyPrvek->mHodnota = data;
+    novyPrvek->mDalsi = mPrvni->mDalsi;
+    mPrvni->mDalsi = novyPrvek;
+}
 void Lss::vypis() const {
 	LssPrvek* aktualni = mPrvni;
 	while (aktualni != nullptr) {
@@ -50,6 +57,15 @@ int Lss::soucet(){
 	}
 	return soucet;
 }
+int Lss::pocet() {
+	LssPrvek* aktualni = mPrvni;
+	int pocet = 0;
+	while (aktualni != nullptr) {
+		pocet++;
+		aktualni = aktualni->mDalsi;
+	}
+	return pocet;
+}
 int Lss::prumer() {
 	LssPrvek* aktualni = mPrvni;
 	int soucet = 0;
@@ -74,7 +90,7 @@ void Lss::zrusNaZacatku() {
 }
 void Lss::zrusVse() {
 	LssPrvek* aktualni = mPrvni;
-	std::cout << "Smaze cely seznam";
+	std::cout << "Smaze cely seznam ";
 	while (aktualni != nullptr) {
 		LssPrvek* dalsi = aktualni->mDalsi;
 		delete aktualni;
