@@ -7,6 +7,7 @@ public:
 	  ~Lss();
 	  void pridejNazacatek(int data);
 	  void pridejDva(int data);
+	  void pridejKamkoliv(int data, int pozice);
 	  void vypis() const;
 	  void zrusNaZacatku();
 	  void zrusVse();

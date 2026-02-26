@@ -12,11 +12,26 @@ void Lss::pridejNazacatek(int data) {
 	mPrvni = novyPrvek;
 }
 void Lss::pridejDva(int data) {
-	std::cout<< "Prida prvek druhe msto v seznamu ";
+	std::cout<< "Prida prvek druhe misto v seznamu ";
     LssPrvek* novyPrvek = new LssPrvek();
     novyPrvek->mHodnota = data;
     novyPrvek->mDalsi = mPrvni->mDalsi;
     mPrvni->mDalsi = novyPrvek;
+}
+void Lss::pridejKamkoliv(int data, int pozice){
+	std::cout << "Prida prvek na urcene misto v seznamu ";
+	LssPrvek* aktualni = mPrvni;
+	for (int i = 0; i < pozice - 1; i++)
+	{
+		if (aktualni->mDalsi == nullptr)
+			break;
+
+		aktualni = aktualni->mDalsi;
+	}
+	LssPrvek* novy = new LssPrvek();
+	novy->mHodnota = data;
+	novy->mDalsi = aktualni->mDalsi;
+	aktualni->mDalsi = novy;
 }
 void Lss::vypis() const {
 	LssPrvek* aktualni = mPrvni;

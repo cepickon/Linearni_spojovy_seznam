@@ -18,6 +18,8 @@ int main() {
 
 	seznam.pridejDva(0);
 	seznam.vypis();
+	seznam.pridejKamkoliv(6, 3);
+	seznam.vypis();
 
 	seznam.zrusNaZacatku();
 	seznam.vypis();
