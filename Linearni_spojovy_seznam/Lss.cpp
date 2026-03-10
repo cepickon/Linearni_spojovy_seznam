@@ -103,6 +103,15 @@ void Lss::zrusNaZacatku() {
 	mPrvni = mPrvni->mDalsi;
 	delete odstraneny;
 }
+void Lss::zrusNaDruh() {
+	std::cout << "Smaze na druhe pozici ";
+	if (mPrvni == nullptr || mPrvni->mDalsi == nullptr) {
+		return;
+		}
+	LssPrvek* odstraneny = mPrvni->mDalsi;
+	mPrvni->mDalsi = odstraneny->mDalsi;
+	delete odstraneny;
+}
 void Lss::zrusVse() {
 	LssPrvek* aktualni = mPrvni;
 	std::cout << "Smaze cely seznam ";
