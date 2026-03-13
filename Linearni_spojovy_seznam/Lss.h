@@ -9,6 +9,7 @@ public:
 	void pridejNaDruh(int data);
 	void pridejNaTret(int data);
 	void pridejNaKonec(int data);
+	void pridejKamkoliv(int data, int pozice);
 	void vypis() const;
 	void vypisS() const;
 	void vypisL() const;
