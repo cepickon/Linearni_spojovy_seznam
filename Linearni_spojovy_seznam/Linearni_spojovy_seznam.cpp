@@ -21,6 +21,8 @@ int main() {
 
 	seznam.pridejNaDruh(6);
 	seznam.vypis();
+	seznam.pridejNaTret(7);
+    seznam.vypis();
 	seznam.zrusNaZacatku();
 	seznam.vypis();
 	seznam.zrusNaDruh();
