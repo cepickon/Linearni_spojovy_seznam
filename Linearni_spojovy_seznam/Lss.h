@@ -10,17 +10,17 @@ public:
 	void pridejNaTret(int data);
 	void pridejNaKonec(int data);
 	void vypis() const;
-	void zrusNaZacatku();
-	void zrusNaDruh();
-	void zrusNaTret();
-	void zrusNaKonci();
-	void zrusVse();
 	void vypisS() const;
 	void vypisL() const;
 	int soucet();
 	int prumer();
 	int pocet();
 	void prohod23();
+	void zrusNaZacatku();
+	void zrusNaDruh();
+	void zrusNaTret();
+	void zrusNaKonci();
+	void zrusVse();
 private:
 	LssPrvek* mPrvni;
 };
