@@ -12,7 +12,7 @@ void Lss::pridejNazacatek(int data){
 	mPrvni = novyPrvek;
 }
 void Lss::pridejNaDruh(int data){
-	std::cout << "Prida na druhou pozici ";
+	std::cout << "Prida prvek na druhou pozici ";
 	if(mPrvni == nullptr) {
 		return;
 	}
@@ -22,7 +22,7 @@ void Lss::pridejNaDruh(int data){
 	mPrvni->mDalsi = novyPrvek;
 }
 void Lss::pridejNaTret(int data) {
-	std::cout << "Prida na treti pozici ";
+	std::cout << "Prida prvek na treti pozici ";
 	if(mPrvni == nullptr || mPrvni->mDalsi == nullptr) {
 		return;
 	}
@@ -32,7 +32,7 @@ void Lss::pridejNaTret(int data) {
 	mPrvni->mDalsi->mDalsi = novyPrvek;
 }
 void Lss::pridejNaKonec(int data){
-	std::cout << "Prida na konec ";
+	std::cout << "Prida prvek na posledni pozici v seznamu ";
 	LssPrvek* novyPrvek = new LssPrvek();
 	novyPrvek->mHodnota = data;
 	novyPrvek->mDalsi = nullptr;
@@ -45,6 +45,20 @@ void Lss::pridejNaKonec(int data){
 		aktualni = aktualni->mDalsi;
 	}
 	aktualni->mDalsi = novyPrvek;
+}
+void Lss::pridejKamkoliv(int data, int pozice){
+	std::cout << "Prida prvek na urcenou pozici v seznamu ";
+	LssPrvek* aktualni = mPrvni;
+	for (int i = 0; i < pozice - 1; i++) {
+		if (aktualni->mDalsi == nullptr) {
+			break;
+		}
+		aktualni = aktualni->mDalsi;
+	}
+	LssPrvek* novy = new LssPrvek();
+	novy->mHodnota = data;
+	novy->mDalsi = aktualni->mDalsi;
+	aktualni->mDalsi = novy;
 }
 void Lss::vypis() const{
 	LssPrvek* aktualni = mPrvni;
@@ -126,7 +140,7 @@ void Lss::zrusNaZacatku() {
 	delete odstraneny;
 }
 void Lss::zrusNaDruh() {
-	std::cout << "Smaze na druhe pozici ";
+	std::cout << "Smaze prvek na druhe pozici ";
 	if (mPrvni == nullptr || mPrvni->mDalsi == nullptr) {
 		return;
 		}
@@ -135,7 +149,7 @@ void Lss::zrusNaDruh() {
 	delete odstraneny;
 }
 void Lss::zrusNaTret(){
-	std::cout << "Smaze na treti pozici ";
+	std::cout << "Smaze prvek na treti pozici ";
 	if (mPrvni == nullptr || mPrvni->mDalsi == nullptr || mPrvni->mDalsi->mDalsi == nullptr) {
 		return;
 	}
