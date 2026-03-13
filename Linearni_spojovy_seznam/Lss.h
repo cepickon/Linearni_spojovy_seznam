@@ -8,8 +8,7 @@ public:
 	  void pridejNazacatek(int data);
 	  void pridejDva(int data);
 	  void pridejNaTret(int data);
-	  void pridejKamkoliv(int data, int pozice);
-	  void vypis() const;
+      void vypis() const;
 	  void zrusNaZacatku();
 	  void zrusNaDruh();
 	  void zrusVse();
