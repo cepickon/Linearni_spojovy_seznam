@@ -13,10 +13,38 @@ void Lss::pridejNazacatek(int data){
 }
 void Lss::pridejNaDruh(int data){
 	std::cout << "Prida na druhou pozici ";
+	if(mPrvni == nullptr) {
+		return;
+	}
 	LssPrvek* novyPrvek = new LssPrvek();
 	novyPrvek->mHodnota = data;
 	novyPrvek->mDalsi = mPrvni->mDalsi;
 	mPrvni->mDalsi = novyPrvek;
+}
+void Lss::pridejNaTret(int data) {
+	std::cout << "Prida na treti pozici ";
+	if(mPrvni == nullptr || mPrvni->mDalsi == nullptr) {
+		return;
+	}
+	LssPrvek* novyPrvek = new LssPrvek();
+	novyPrvek->mHodnota = data;
+	novyPrvek->mDalsi = mPrvni->mDalsi->mDalsi;
+	mPrvni->mDalsi->mDalsi = novyPrvek;
+}
+void Lss::pridejNaKonec(int data){
+	std::cout << "Prida na konec ";
+	LssPrvek* novyPrvek = new LssPrvek();
+	novyPrvek->mHodnota = data;
+	novyPrvek->mDalsi = nullptr;
+	if(mPrvni == nullptr) {
+		mPrvni = novyPrvek;
+		return;
+	}
+	LssPrvek* aktualni = mPrvni;
+	while (aktualni->mDalsi != nullptr) {
+		aktualni = aktualni->mDalsi;
+	}
+	aktualni->mDalsi = novyPrvek;
 }
 void Lss::vypis() const{
 	LssPrvek* aktualni = mPrvni;
@@ -76,6 +104,17 @@ int Lss::pocet() {
 	}
 	return pocet;
 }
+void Lss::prohod23(){
+	std::cout << "Prohodi druhy a treti prvek ";
+	if(mPrvni == nullptr || mPrvni->mDalsi == nullptr || mPrvni->mDalsi->mDalsi == nullptr) {
+		return;
+	}
+	LssPrvek* druhy = mPrvni->mDalsi;
+	LssPrvek* treti = mPrvni->mDalsi->mDalsi;
+	mPrvni->mDalsi = treti;
+	druhy->mDalsi = treti->mDalsi;
+	treti->mDalsi = druhy;
+}
 void Lss::zrusNaZacatku() {
 	LssPrvek* novyPrvek = new LssPrvek();
 	std::cout << "Smaze prvni prvek ";
@@ -94,6 +133,32 @@ void Lss::zrusNaDruh() {
 	LssPrvek* odstraneny = mPrvni->mDalsi;
 	mPrvni->mDalsi = odstraneny->mDalsi;
 	delete odstraneny;
+}
+void Lss::zrusNaTret(){
+	std::cout << "Smaze na treti pozici ";
+	if (mPrvni == nullptr || mPrvni->mDalsi == nullptr || mPrvni->mDalsi->mDalsi == nullptr) {
+		return;
+	}
+	LssPrvek* odstraneny = mPrvni->mDalsi->mDalsi;
+	mPrvni->mDalsi->mDalsi = odstraneny->mDalsi;
+	delete odstraneny;
+}
+void Lss::zrusNaKonci(){
+	std::cout << "Smaze posledni prvek ";
+	if (mPrvni == nullptr) {
+		return;
+	}
+	if(mPrvni->mDalsi == nullptr) {
+		delete mPrvni;
+		mPrvni = nullptr;
+		return;
+	}
+	LssPrvek* aktualni = mPrvni;
+	while (aktualni->mDalsi->mDalsi != nullptr) {
+		aktualni = aktualni->mDalsi;
+	}
+	delete aktualni->mDalsi;
+	aktualni->mDalsi = nullptr;
 }
 void Lss::zrusVse() {
 	LssPrvek* aktualni = mPrvni;
