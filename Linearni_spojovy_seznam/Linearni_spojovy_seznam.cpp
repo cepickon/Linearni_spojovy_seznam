@@ -18,14 +18,22 @@ int main() {
 	std::cout << "Soucet:" << seznam.soucet() << std::endl;
 	std::cout << "Pocet:" << seznam.pocet() << std::endl;
 	std::cout << "Prumer:" << seznam.prumer() << std::endl;
-
+	
 	seznam.pridejNaDruh(6);
 	seznam.vypis();
 	seznam.pridejNaTret(7);
-    seznam.vypis();
+	seznam.vypis();
+	seznam.pridejNaKonec(8);
+	seznam.vypis();
+	seznam.prohod23();
+	seznam.vypis();
 	seznam.zrusNaZacatku();
 	seznam.vypis();
 	seznam.zrusNaDruh();
+	seznam.vypis();
+	seznam.zrusNaTret();
+	seznam.vypis();
+	seznam.zrusNaKonci();
 	seznam.vypis();
 	seznam.zrusVse();
 	seznam.vypis();
