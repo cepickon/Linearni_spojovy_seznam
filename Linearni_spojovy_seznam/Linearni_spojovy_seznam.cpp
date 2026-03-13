@@ -15,15 +15,17 @@ int main() {
 	seznam.vypisS();
 	std::cout << "Vypis lichych cisel ";
 	seznam.vypisL();
-	std::cout << "Soucet:" << seznam.soucet() << std::endl;
-	std::cout << "Pocet:" << seznam.pocet() << std::endl;
-	std::cout << "Prumer:" << seznam.prumer() << std::endl;
+	std::cout << "Soucet: " << seznam.soucet() << std::endl;
+	std::cout << "Pocet: " << seznam.pocet() << std::endl;
+	std::cout << "Prumer: " << seznam.prumer() << std::endl;
 	
 	seznam.pridejNaDruh(6);
 	seznam.vypis();
 	seznam.pridejNaTret(7);
 	seznam.vypis();
 	seznam.pridejNaKonec(8);
+	seznam.vypis();
+	seznam.pridejKamkoliv(9, 5);
 	seznam.vypis();
 	seznam.prohod23();
 	seznam.vypis();
