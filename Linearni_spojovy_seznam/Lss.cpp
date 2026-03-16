@@ -174,6 +174,31 @@ void Lss::zrusNaKonci(){
 	delete aktualni->mDalsi;
 	aktualni->mDalsi = nullptr;
 }
+void Lss::zrusNaPozici(int pozice){
+	std::cout << "Smaze na urcite pozici v seznamu seznamu ";
+	if (mPrvni == nullptr){
+		return;
+	}
+	if (pozice == 0){
+		LssPrvek* odstraneny = mPrvni;
+		mPrvni = mPrvni->mDalsi;
+		delete odstraneny;
+		return;
+	}
+	LssPrvek* aktualni = mPrvni;
+	for (int i = 0; i < pozice - 1; i++){
+		if (aktualni->mDalsi == nullptr){
+			return;
+	}
+		aktualni = aktualni->mDalsi;
+	}
+	if (aktualni->mDalsi == nullptr) {
+		return;
+	}
+	LssPrvek* odstraneny = aktualni->mDalsi;
+	aktualni->mDalsi = odstraneny->mDalsi;
+	delete odstraneny;
+}
 void Lss::zrusVse() {
 	LssPrvek* aktualni = mPrvni;
 	std::cout << "Smaze cely seznam";

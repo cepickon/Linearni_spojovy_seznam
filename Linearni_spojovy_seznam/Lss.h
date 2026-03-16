@@ -21,6 +21,7 @@ public:
 	void zrusNaDruh();
 	void zrusNaTret();
 	void zrusNaKonci();
+	void zrusNaPozici(int pozice);
 	void zrusVse();
 private:
 	LssPrvek* mPrvni;

@@ -37,6 +37,8 @@ int main() {
 	seznam.vypis();
 	seznam.zrusNaKonci();
 	seznam.vypis();
+	seznam.zrusNaPozici(5);
+	seznam.vypis();
 	seznam.zrusVse();
 	seznam.vypis();
 	std::cout << std::endl;
